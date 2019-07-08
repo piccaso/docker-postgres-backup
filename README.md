@@ -1,4 +1,4 @@
-# docker-postgres-backup
+# [0xff/postgres-backup](https://hub.docker.com/r/0xff/postgres-backup)
 A (very) simple daily backup solution for PostgreSQL.
 Built around [dcron](https://github.com/dubiousjim/dcron) and [`pg_dump`](https://www.postgresql.org/docs/current/app-pgdump.html)   
 in a very small package - thanks to [Alpine](https://alpinelinux.org/).
