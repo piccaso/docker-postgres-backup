@@ -28,15 +28,16 @@ See [Dockerfile](./Dockerfile) for defaults.
 
 ## Advanced usage
 By default backups are made as SQL dumps, wich is nice for readability but might not be what you want.  
-In that case you may want to use a different format, for example `tar`.
+In that case you may want to use a different format, for example `tar`.  
 You can do so by changing the `PGDUMPOPTIONS` environment variable like:
 ```
   backup:
     environment:
       PGDUMPOPTIONS: "-F t -f /pg-backups/backup-$$(date +%u).tar"
 ```
-The example above is for a `docker-compose.yml` file where you have to use `$$` in order to write a single dollar sign.
+The example above is for a `docker-compose.yml` file where you have to use `$$` in order to write a single dollar sign.  
 
+For a full example of using the `custom` format please have a look at [example.yml](./example.yml).  
 ## Restore
 `docker exec` into the container and use [`pg_restore`](https://www.postgresql.org/docs/current/app-pgrestore.html) or [`psql`](https://www.postgresql.org/docs/current/app-psql.html).
 
