@@ -1,3 +1,4 @@
+# Inteded for testing and development - look at example.yml for an example.
 version: "2.2"
 services:
 
