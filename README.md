@@ -6,7 +6,7 @@ in a very small package - thanks to [Alpine](https://alpinelinux.org/).
 
 ## Usage
 with docker-compose
-```
+```yml
 version: "2.2"
 services:
   db:
@@ -30,7 +30,7 @@ See [Dockerfile](./Dockerfile) for defaults.
 By default backups are made as SQL dumps, wich is nice for readability but might not be what you want.  
 In that case you may want to use a different format, for example `tar`.  
 You can do so by changing the `PGDUMPOPTIONS` environment variable like:
-```
+```yml
   backup:
     environment:
       PGDUMPOPTIONS: "-F t -f /pg-backups/backup-$$(date +%u).tar"
