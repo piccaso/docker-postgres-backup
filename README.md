@@ -46,7 +46,7 @@ Inspect backup:
 ```sh
 docker-compose exec backup pg_restore -l /pg-backups/backup-1.tar
 ```
-Restore - **and thereby destroy existing data** - backup into `postgres` database:
+Restore backup - **and thereby destroy existing data** - into `postgres` database:
 ```sh
 docker-compose exec backup pg_restore -d postgres --clean --if-exists /pg-backups/backup-1.tar
 ```
