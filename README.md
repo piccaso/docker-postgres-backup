@@ -27,15 +27,17 @@ See [Dockerfile](./Dockerfile) for defaults.
 [`libpq` environment variables](https://www.postgresql.org/docs/current/libpq-envars.html) will also be passed on.  
 
 ## Advanced usage
-By default backups are made as SQL dumps, wich is nice for readability but might not be what you want.  
-In that case you may want to use a different format, for example `tar`.  
+By default backups are made for 7 days as SQL dumps, wich is nice for readability but might not be what you want.  
+In that case you may want to use a different format, for example `tar` for a jear.  
 You can do so by changing the `PGDUMPOPTIONS` environment variable like:
 ```yml
   backup:
     environment:
-      PGDUMPOPTIONS: "-F t -f /pg-backups/backup-$$(date +%u).tar"
+      PGDUMPOPTIONS: "-F t -f /pg-backups/backup-$$(date +%j).tar"
 ```
 The example above is for a `docker-compose.yml` file where you have to use `$$` in order to write a single dollar sign.  
+Also note `%j` in the [date format](http://man7.org/linux/man-pages/man1/date.1.html) expression which means *day of year*.  
+So you will have backup files for a year until the first one is overwritten.  
 
 For a full example of using the `custom` format please have a look at [example.yml](./example.yml).  
 ## Restore
