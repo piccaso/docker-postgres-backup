@@ -1,5 +1,5 @@
-FROM alpine:3.10
-RUN apk add --no-cache postgresql-client dcron tini
+FROM alpine:latest
+RUN apk add --no-cache postgresql-client dcron tini tzdata
 ENV PGHOST="db" \
     PGUSER="postgres" \
     PGDATABASE="postgres" \

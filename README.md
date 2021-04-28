@@ -39,7 +39,9 @@ The example above is for a `docker-compose.yml` file where you have to use `$$` 
 Also note `%j` in the [date format](http://man7.org/linux/man-pages/man1/date.1.html) expression which means *day of year*.  
 So you will have backup files for a year until the first one is overwritten.  
 
-For a full example of using the `custom` format please have a look at [example.yml](./example.yml).  
+For a full example of using the `custom` format please have a look at [example.yml](./example.yml).
+
+To change the timezone, use the TZ environment, example: TZ=America/Sao_Paulo
 ## Restore
 `docker exec` into the container and use [`pg_restore`](https://www.postgresql.org/docs/current/app-pgrestore.html) or [`psql`](https://www.postgresql.org/docs/current/app-psql.html).
 
